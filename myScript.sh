@@ -1,7 +1,7 @@
 #!/bin/bash
-FolderDirectory = "/myFiles"
+FolderDirectory = "/Users/kathe/workspace/com.kobioha.wheelsup/myFiles"
 nth = '7'
-#[ ! -d $FolderDirectory ] && sudo mkdir -p $FolderDirectory
+[ ! -d $FolderDirectory ] && mkdir -p $FolderDirectory
 cd $FolderDirectory
 eval touch file{1..nth}
 for value in $(seq 1 $((nth-3)))
