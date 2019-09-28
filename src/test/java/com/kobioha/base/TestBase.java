@@ -99,11 +99,23 @@ public class TestBase {
 	public String parseAndSearchString(String s, WebElement onetimefee)
 	{
 		Sleeper.sleepTightInSeconds(3);
-		for(int i =0; i<onetimefee.getText().length(); i++)
+		String fee = onetimefee.getText();
+		int j=0;
+		String found = "";
+		int len = s.length();
+		for(int i =j; len<fee.length(); i++)
 		{
-			System.out.println();
+			
+			if(s.equalsIgnoreCase(fee.substring(j, len)))
+			{
+				found = fee.substring(j, len);
+				System.out.println("Found: " + found);
+				break;
+			}
+			j++;
+			len++;
 		}
-		return onetimefee.getText();
+		return found;
 	}
 	
 	public String selectElements(WebElement elem)

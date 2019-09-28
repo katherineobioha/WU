@@ -1,9 +1,11 @@
 package com.kobioha.tests;
 
 import org.openqa.selenium.server.browserlaunchers.Sleeper;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.kobioha.base.TestBase;
 import com.kobioha.pom.*;
@@ -24,7 +26,7 @@ public class Scenario2 {
 		
 	}
 	@Test(priority =0)
-	public void test1()
+	public void homepage()
 	{
 		home.navigateToWebsite("https://wheelsup.com");
 		System.out.println(home.selectElements(home.getTitle()));
@@ -35,24 +37,25 @@ public class Scenario2 {
 	}
 	
 	@Test(priority =1)
-	public void test2()
+	public void navigatePage()
 	{
 		home.ScrollToTop();
-		//home.ClickOnElements(home.getButtonmenu());
+	
 		home.ClickOnElements(home.getMembership());
-		home.ClickOnElements(home.getCoreMembership());
+		new SoftAssert().assertEquals(home.ClickOnElements(home.getCoreMembership()), true);
 		
 		coremembership.scrollToElement("DOWN", coremembership.getEasymembershiptext());
-		System.out.println(coremembership.parseAndSearchString("ONE-TIME INITIATION FEE", coremembership.getOnetimefee()));
+		Assert.assertEquals("one-time initiation fee",coremembership.parseAndSearchString("ONE-TIME INITIATION FEE", coremembership.getOnetimefee()));
 		coremembership.scrollToElement("down", coremembership.getLearnmoretoday());
-		//coremembership.ClickOnElements(coremembership.getContinuebutton());
+		
 	}
 	
 	@Test(priority =2)
 	public void fillform()
 	{
-		coremembership.SendKeysToElement("kat", coremembership.getFormfirstname());
+		new SoftAssert().assertEquals(coremembership.SendKeysToElement("kat", coremembership.getFormfirstname()), true);
 		coremembership.SendKeysToElement("obioha", coremembership.getFormlastname());
+		Sleeper.sleepTightInSeconds(3);
 	}
 	
 	@AfterTest
