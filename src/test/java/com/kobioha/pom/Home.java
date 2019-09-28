@@ -34,10 +34,6 @@ public class Home extends TestBase{
 		PageFactory.initElements(getWebDriver(), this);
 	}
 	
-	public void navigateToWebsite()
-	{
-		getWebDriver().get("https://wheelsup.com");
-	}
 	
 	public WebElement getTitle()
 	{

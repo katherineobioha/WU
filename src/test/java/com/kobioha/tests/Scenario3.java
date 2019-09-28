@@ -1,10 +1,10 @@
 package com.kobioha.tests;
 
 import java.util.HashMap;
+
 import java.util.Iterator;
 import java.util.Map;
 
-import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

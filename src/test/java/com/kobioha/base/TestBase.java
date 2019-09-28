@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TestBase {
@@ -20,6 +21,11 @@ public class TestBase {
 		return this.driver;
 	}
 	
+	public boolean navigateToWebsite(String url)
+	{
+		getWebDriver().get(url);
+		return true;
+	}
 	public boolean createDriver()
 	{
 		if(driver==null)
@@ -60,7 +66,7 @@ public class TestBase {
 	
 	public void ScrollToTop()
 	{
-		((JavascriptExecutor) driver).executeScript("window.scrollTo(0,0)");
+		((JavascriptExecutor) this.driver).executeScript("window.scrollTo(0,0)");
 	}
 	
 	public String scrollToElement(String pos, WebElement elem)
@@ -86,5 +92,24 @@ public class TestBase {
 	public String parseAndSearchString(String s, WebElement onetimefee)
 	{
 		return null;
+	}
+	
+	public String selectElements(WebElement elem)
+	{
+		wait = new WebDriverWait(this.driver,1 );
+		wait.until(ExpectedConditions.elementToBeClickable(elem));
+		if(elem.isDisplayed())
+		{
+			return elem.getText();
+		}
+		else
+		{
+			System.out.println("Could not find elem" + elem);
+			return "null";
+		}
+	}
+	public void quitdriver()
+	{
+		this.driver.quit();
 	}
 }
