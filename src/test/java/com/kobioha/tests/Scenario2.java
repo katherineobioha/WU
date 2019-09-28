@@ -23,7 +23,7 @@ public class Scenario2 {
 		coremembership = new CoreMembership();
 		
 	}
-	@Test
+	@Test(priority =0)
 	public void test1()
 	{
 		home.navigateToWebsite("https://wheelsup.com");
@@ -34,7 +34,7 @@ public class Scenario2 {
 		Sleeper.sleepTightInSeconds(1);
 	}
 	
-	@Test
+	@Test(priority =1)
 	public void test2()
 	{
 		home.ScrollToTop();
@@ -46,7 +46,7 @@ public class Scenario2 {
 		coremembership.ClickOnElements(coremembership.getContinuebutton());
 	}
 	
-	@Test
+	@Test(priority =2)
 	public void fillform()
 	{
 		coremembership.SendKeysToElement("kat", coremembership.getFormfirstname());
