@@ -11,6 +11,11 @@ public class Home extends TestBase{
 	@FindBy(tagName = "h1")
 	WebElement headertitle;
 	
+	@FindBy(id = "btnMenu")
+	WebElement buttonmenu;
+	
+
+
 	@FindBy(xpath="//*[@id='option_3']/li[1]")
 	WebElement phoneNumber;
 	
@@ -20,7 +25,7 @@ public class Home extends TestBase{
 	@FindBy(xpath="/html/body/app-root/div/app-footer/footer/div/div[1]/div/div[4]/div/ul/li/span")
 	WebElement address;
 	
-	@FindBy(xpath="/html/body/app-root/div/app-menu/div/div[2]/div/div/div[1]/div/nav/ul/li[1]/app-menu-item/div/a/")
+	@FindBy(xpath="/html/body/app-root/div/app-menu/div/div[2]/div/div/div[1]/div/nav/ul/li[1]")
 	WebElement membership;
 
 	@FindBy(xpath="/html/body/app-root/div/app-menu/div/div[2]/div/div/div[1]/div/nav/ul/li[1]/app-menu-item/div/ul/li[2]/a")
@@ -29,12 +34,21 @@ public class Home extends TestBase{
 	@FindBy(xpath="//*[@id='option_3']/li[1]")
 	WebElement contact;
 	
+	@FindBy(id = "link-0.27671291136383447")
+	WebElement request;
+	
+	public WebElement getRequest() {
+		return request;
+	}
+
 	public Home()
 	{
 		PageFactory.initElements(getWebDriver(), this);
 	}
 	
-	
+	public WebElement getButtonmenu() {
+		return buttonmenu;
+	}
 	public WebElement getTitle()
 	{
 		return headertitle;

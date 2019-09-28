@@ -11,21 +11,25 @@ public class CoreMembership extends TestBase {
 	
 	@FindBy(tagName = "h1")
 	WebElement frame;
-	
 
-	@FindBy(tagName = "//*[@id='ways_to_fly-component-8']/app-module-title/div/h1")
+
+	@FindBy(xpath = "//*[@id='ways_to_fly-component-8']/app-module-title/div")
 	WebElement easymembershiptext;
 	
-	@FindBy(tagName = "//*[@id='ways_to_fly-component-8']/app-module-title/div/p/")
+	@FindBy(xpath = "//*[@id='ways_to_fly-component-8']/app-module-title/div/p")
 	WebElement onetimefee;
 	
-	@FindBy(tagName = "//*[@id='soft_footer-component']/div[3]/div/div[1]/app-module-title/div/h1")
+	@FindBy(xpath = "//*[@id='soft_footer-component']/div[3]/div/div[1]/app-module-title/div")
 	WebElement learnmoretoday;
 	
-	@FindBy(id = "link-0.21078839876727562")
+	@FindBy(xpath = "//*[@id='link-0.8977247746334571']")
 	WebElement continuebutton;
 	
-	@FindBy(id = "FirsttName-clone")
+	@FindBy(id = "link-0.27671291136383447")
+	WebElement request;
+	
+
+	@FindBy(id = "FirstName-clone")
 	WebElement formfirstname;
 	
 	@FindBy(id = "LastName-clone")
@@ -34,13 +38,17 @@ public class CoreMembership extends TestBase {
 	
 	public CoreMembership()
 	{
-		PageFactory.initElements(getWebDriver(), this);
+		PageFactory.initElements(super.getWebDriver(), this);
 	}
 	
 	public WebElement getFrame() {
 		return frame;
 	}
 
+	public WebElement getRequest() {
+		return request;
+	}
+	
 	public WebElement getEasymembershiptext() {
 		return easymembershiptext;
 	}

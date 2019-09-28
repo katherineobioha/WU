@@ -38,19 +38,21 @@ public class Scenario2 {
 	public void test2()
 	{
 		home.ScrollToTop();
+		//home.ClickOnElements(home.getButtonmenu());
 		home.ClickOnElements(home.getMembership());
 		home.ClickOnElements(home.getCoreMembership());
-		coremembership.scrollToElement("down", coremembership.getEasymembershiptext());
+		
+		coremembership.scrollToElement("DOWN", coremembership.getEasymembershiptext());
 		System.out.println(coremembership.parseAndSearchString("ONE-TIME INITIATION FEE", coremembership.getOnetimefee()));
 		coremembership.scrollToElement("down", coremembership.getLearnmoretoday());
-		coremembership.ClickOnElements(coremembership.getContinuebutton());
+		//coremembership.ClickOnElements(coremembership.getContinuebutton());
 	}
 	
 	@Test(priority =2)
 	public void fillform()
 	{
 		coremembership.SendKeysToElement("kat", coremembership.getFormfirstname());
-		coremembership.SendKeysToElement("obioha", coremembership.getFormfirstname());
+		coremembership.SendKeysToElement("obioha", coremembership.getFormlastname());
 	}
 	
 	@AfterTest
