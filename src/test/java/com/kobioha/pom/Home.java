@@ -17,13 +17,13 @@ public class Home extends TestBase{
 	@FindBy(xpath="//*[@id='option_3']/li[2]")
 	WebElement email;
 	
-	@FindBy(xpath="//*[@id='option_3']/li[1]")
+	@FindBy(xpath="/html/body/app-root/div/app-footer/footer/div/div[1]/div/div[4]/div/ul/li/span")
 	WebElement address;
 	
-	@FindBy(xpath="")
+	@FindBy(xpath="/html/body/app-root/div/app-menu/div/div[2]/div/div/div[1]/div/nav/ul/li[1]/app-menu-item/div/a/")
 	WebElement membership;
 
-	@FindBy(xpath="//*[@id='option_3']/li[1]")
+	@FindBy(xpath="/html/body/app-root/div/app-menu/div/div[2]/div/div/div[1]/div/nav/ul/li[1]/app-menu-item/div/ul/li[2]/a")
 	WebElement coreMembership;
 	
 	@FindBy(xpath="//*[@id='option_3']/li[1]")
@@ -71,7 +71,6 @@ public class Home extends TestBase{
 	public WebElement getContact() {
 		return contact;
 	}
-	
 	
 	
 }
